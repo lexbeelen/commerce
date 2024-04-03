@@ -21,4 +21,8 @@ export async function middleware(req: NextRequest) {
       ),
     );
   }
+
+  if (req.nextUrl.pathname === "/home") {
+    return NextResponse.redirect(new URL("/", req.url));
+  }
 }
